@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-gray-900">
+
+    <div class="container mx-auto px-6 py-10">
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-white mb-4">{{ title }}</h1>
+            <p class="text-xl text-white opacity-80">{{ description }}</p>
+        </header>
+
+        <!-- Features Section -->
+        <section>
+            <h2 class="text-3xl font-semibold text-white mb-6 text-center">Core Features of Open Terminal</h2>
+            
+            <div class="overflow-x-auto rounded-lg shadow-lg border border-gray-200">
+                <table class="min-w-full bg-white">
+                    <thead class="bg-gradient-to-r from-indigo-600 to-pink-600 text-white">
+                        <tr>
+                            <th class="px-6 py-4 text-left">Feature</th>
+                            <th class="px-6 py-4 text-left">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-indigo-50">
+                            <td class="px-6 py-4 font-semibold text-indigo-600">Realtime Watchlists</td>
+                            <td class="px-6 py-4 text-gray-700">Monitor the latest market data with dynamic watchlists.</td>
+                        </tr>
+                        <tr class="hover:bg-indigo-50">
+                            <td class="px-6 py-4 font-semibold text-indigo-600">Placing Orders from the Watchlists</td>
+                            <td class="px-6 py-4 text-gray-700">Quickly place orders from your custom watchlist.</td>
+                        </tr>
+                        <tr class="hover:bg-indigo-50">
+                            <td class="px-6 py-4 font-semibold text-indigo-600">Building Order Book, Trade Book, Position Book, Holdings</td>
+                            <td class="px-6 py-4 text-gray-700">Easily track orders, trades, and holdings in one place.</td>
+                        </tr>
+                        <tr class="hover:bg-indigo-50">
+                            <td class="px-6 py-4 font-semibold text-indigo-600">Building Trailing Stoploss Orders, MTM Based Square off</td>
+                            <td class="px-6 py-4 text-gray-700">Set trailing stoploss and manage your positions efficiently based on MTM.</td>
+                        </tr>
+                        <tr class="hover:bg-indigo-50">
+                            <td class="px-6 py-4 font-semibold text-indigo-600">Voice-Based Trading System</td>
+                            <td class="px-6 py-4 text-gray-700">Trade hands-free using voice commands, increasing productivity.</td>
+                        </tr>
+                        <tr class="hover:bg-indigo-50">
+                            <td class="px-6 py-4 font-semibold text-indigo-600">Keyboard-Based Orders</td>
+                            <td class="px-6 py-4 text-gray-700">Quickly place orders using keyboard shortcuts for fast execution.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Action Section -->
+        <section class="mt-12 text-center">
+            <a href="/" class="inline-block px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-pink-600 rounded-xl shadow-lg hover:from-indigo-700 hover:to-pink-700 transition-all">
+                Back to Home
+            </a>
+        </section>
+    </div>
+
+</body>
+</html>
