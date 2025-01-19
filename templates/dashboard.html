@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}Dashboard | Open Terminal{% endblock %}
+
+{% block content %}
+    <div class="container mx-auto px-4 py-10">
+        <header class="text-center mb-10">
+            <h1 class="text-5xl font-bold text-white">Welcome to OpenTerminal</h1>
+            <p class="text-lg text-gray-300 mt-4">Logged in as: {{ username }}</p>
+        </header>
+
+        <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Your Trading Dashboard</h2>
+            <p class="text-gray-300">This is a protected page. You need to be logged in to view this content.</p>
+        </div>
+    </div>
+{% endblock %}

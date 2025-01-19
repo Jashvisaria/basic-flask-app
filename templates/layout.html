@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Open Terminal{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="dark bg-gray-900 text-gray-100">
+    <nav class="bg-gray-800 shadow-md p-4 flex justify-between items-center">
+        <div class="text-xl font-bold text-white">Open Terminal</div>
+        <div class="space-x-4">
+            <a href="{{ url_for('main.home') }}" class="text-gray-300 hover:text-white">Home</a>
+            <a href="{{ url_for('main.about') }}" class="text-gray-300 hover:text-white">About</a>
+            {% if 'access_token' in session %}
+                <a href="{{ url_for('main.dashboard') }}" class="text-gray-300 hover:text-white">Dashboard</a>
+                <a href="{{ url_for('main.logout') }}" class="text-gray-300 hover:text-white">Logout</a>
+            {% else %}
+                <a href="{{ url_for('main.login') }}" class="text-gray-300 hover:text-white">Login</a>
+                <a href="{{ url_for('main.register') }}" class="text-gray-300 hover:text-white">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="container mx-auto mt-4">
+                {% for category, message in messages %}
+                    <div class="p-4 mb-4 rounded-md 
+                        {% if category == 'success' %}bg-green-500{% endif %}
+                        {% if category == 'danger' %}bg-red-500{% endif %}
+                        {% if category == 'warning' %}bg-yellow-500{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+
+    <footer class="bg-gray-800 text-center py-6 mt-auto">
+        <p class="text-sm text-gray-400">© 2025 Open Terminal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

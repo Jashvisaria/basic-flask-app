@@ -1,16 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask
+from extensions import db
+from routes import main
 
 app = Flask(__name__)
 
-# Route for the home page
-@app.route('/')
-def home():
-    return render_template('index.html', title="Open Terminal", slogan="Empowering Traders with Insight and Simplicity")
+# Configuration
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'your_secret_key'
 
-# Route for the about page
-@app.route('/about')
-def about():
-    return render_template('about.html', title="About Open Terminal", slogan="Learn more about our features")
+# Initialize extensions
+db.init_app(app)
+
+# Register blueprints
+app.register_blueprint(main)
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
