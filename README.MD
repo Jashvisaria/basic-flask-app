@@ -8,109 +8,114 @@ A Flask-based web application for trading using the AngelOne Smart API.
 - AngelOne Smart API Integration
 - Secure Session Management
 - Protected Dashboard Access
-- Responsive UI using Tailwind CSS
+- Two-Factor Authentication (2FA)
 
 ## Prerequisites
 
-- Python 3.8 or higher
-- pip (Python package manager)
+- Python 3.8+
+- pip
 - AngelOne Trading Account
-- Google Authenticator (for 2FA)
+- Google Authenticator
 
 ## Installation
 
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd basic-flask-app
+cd open-terminal-trading-app
 ```
 
-2. Create and activate a virtual environment:
+2. Create virtual environment:
 ```bash
 python -m venv venv
-# On Windows
-venv\Scripts\activate
-# On Unix or MacOS
-source venv/bin/activate
+source venv/bin/activate  # On Unix/MacOS
+venv\Scripts\activate     # On Windows
 ```
 
-3. Install required packages:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Configuration
 
-1. Make sure you have your AngelOne credentials ready:
+1. Required Credentials:
    - Client ID
    - API Key
-   - Trading Password (PIN)
-   - Google Authenticator set up for TOTP
+   - Trading Password
+   - Google Authenticator TOTP
 
-2. The application uses SQLite as the database, which will be created automatically when you run the app.
+2. Database: SQLite (auto-created)
 
 ## Running the Application
 
-1. Start the Flask application:
 ```bash
 python app.py
 ```
 
-2. Open your web browser and navigate to:
-```
-http://localhost:5000
-```
+Access at: `http://localhost:5000`
 
 ## Usage
 
 1. Register:
-   - Navigate to the registration page
-   - Enter your username
-   - Enter your AngelOne Client ID
-   - Enter your API Key
+   - Enter username
+   - Provide AngelOne Client ID
+   - Input API Key
 
 2. Login:
-   - Use your Client ID
-   - Enter your trading password (PIN)
-   - Enter the current TOTP code from Google Authenticator
+   - Use Client ID
+   - Enter trading password
+   - Provide TOTP from Google Authenticator
 
 ## Project Structure
 
 ```
-basic-flask-app/
+open-terminal-trading-app/
 │
 ├── templates/
 │   ├── layout.html
 │   ├── index.html
-│   ├── about.html
-│   ├── register.html
 │   ├── login.html
 │   └── dashboard.html
 │
 ├── app.py
-├── config.py
-├── extensions.py
-├── models.py
 ├── routes.py
+├── models.py
+├── extensions.py
+├── config.py
 ├── requirements.txt
+├── LICENSE
 └── README.md
 ```
 
-## Security Notes
+## Security Recommendations
 
-- Never share your API keys or credentials
-- Always use HTTPS in production
-- Keep your Google Authenticator secure
-- Regularly update your passwords
+- Never share API credentials
+- Use HTTPS in production
+- Secure Google Authenticator
+- Regularly update passwords
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+1. Fork repository
+2. Create feature branch
+3. Commit changes
+4. Push branch
+5. Create Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the GNU Affero General Public License (AGPL) version 3.0.
+
+Key points:
+- Network service usage requires complete source code disclosure
+- Preserve all copyright notices
+- Modifications must be released under AGPL
+- Commercial use permitted with full source code sharing
+
+Full license terms in LICENSE file.
+
+## Disclaimer
+
+This software is provided "as is" without warranty. Use at your own risk.
+Not affiliated with AngelOne. Requires compliance with AngelOne's API Terms of Service.
